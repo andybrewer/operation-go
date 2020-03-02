@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Operation Go: A Routine Mission - Go Programming Game - GoCode.io
+    </title>
+    <meta name="description" content="Play Operation Go - an interactive Go programming game in the browser.">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <base href="/">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <link rel="stylesheet" href="/css/ab-1.0.css">
+    <link rel="stylesheet" href="/operation-go/css/operation-go-1.0.css">
+</head>
+
+<body>
+
+
+
+    <div id="play" class="content play__opgo">
+
+        <h1><a href="/">Andy Brewer</a> Operation Go: A Routine Mission</h1>
+
+        <audio controls autoplay loop>
+            <source src="/operation-go/audio/operation-go-soundtrack.mp3" type="audio/mpeg">
+        </audio>
+
+    </div>
+
+    <template id="level">
+        <div class="story">
+            <img class="story__pic" />
+            <h2 class="story__title"></h2>
+            <div class="story__intro"></div>
+        </div>
+        <div class="editor">
+            <div class="editor__nav">
+                <div class="editor__nav--button editor__nav--button-red"></div>
+                <div class="editor__nav--button editor__nav--button-yellow"></div>
+                <div class="editor__nav--button editor__nav--button-green"></div>
+                <div class="editor__nav--title"></div>
+                <span class="editor__nav--hint" onclick="showHint();" title="show hint">&#128161;</span>
+            </div>
+            <div class="editor__window"></div>
+            <div class="output">
+                <p class="output__cmd">&gt;</p>
+                <p class="output__results"></p>
+                <p class="output__message"></p>
+            </div>
+        </div>
+        <div class="cmd">
+            <button onclick="run();">Run <span class="button__arrow">&#9658;</span></button>
+        </div>
+    </template>
+
+    <script src="/operation-go/js/ace/ace-1.4.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/operation-go/js/ace/ace-golang-1.4.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/operation-go/js/play-1.0.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        // initialize the game
+        setupGame("operation_go", "go");
+    </script>
+
+    <script>
+        (function () {
+            window.counter = 'https://andybrewer.goatcounter.com/count'
+
+            var script = document.createElement('script');
+            script.async = 1;
+            script.src = '//gc.zgo.at/count.js';
+            var ins = document.getElementsByTagName('script')[0];
+            ins.parentNode.insertBefore(script, ins)
+        })();
+    </script>
+</body>
+
+</html>

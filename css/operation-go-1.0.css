@@ -1,0 +1,326 @@
+/*
+	Global
+*/
+
+section {
+    padding: 3rem 0 2rem 0;
+}
+
+a {
+    color: #4c8efa;
+    text-decoration: none;
+    border-bottom: 0.16rem solid #fff;
+    padding: 0.1rem 0.1rem;
+    font-weight: 400;
+    line-height: 180%;
+}
+
+a:hover {
+    border-bottom: 0.16rem solid #4c8efa;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 70px;
+}
+
+@media only screen and (max-width: 960px) {
+    body {
+        padding: 2rem;
+    }
+
+    .split {
+        grid-template-columns: 1fr;
+        grid-row-gap: 0px;
+    }
+}
+
+ul.feature {
+    font-size: 1.1rem;
+    margin: 0 0 2rem 0;
+    padding: 0;
+}
+
+ul.feature li {
+    list-style: none;
+    margin-bottom: 0.8rem;
+}
+
+ul.feature li a {
+    display: grid;
+    line-height: 100%;
+    grid-template-columns: 60px auto;
+    box-shadow: 0 2px 8px #e5e5e5;
+    font-size: 1rem;
+    font-weight: 400;
+    padding: 0.5rem 0.4rem 0.1rem 0.4rem;
+    border-radius: 7px;
+}
+
+ul.feature li img {
+    border-radius: 9px;
+    width: 45px;
+    height: 45px;
+}
+
+ul.feature li a:hover span.title {
+    color: #222;
+}
+
+ul.feature li div {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    padding: 0.3rem 0;
+}
+
+ul.feature span.title {
+    display: block;
+    color: #555;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+ul.feature span.sub {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: #666;
+    display: block;
+}
+
+button {
+    padding: 0.7rem 1rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #777;
+}
+
+button:hover {
+    color: #000;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.button__arrow {
+    font-size: 0.5rem;
+    margin-left: 2px;
+}
+
+audio {
+    margin: 3rem auto 0 auto;
+    display: block;
+    position: relative;
+    left: 7px;
+}
+
+audio::-webkit-media-controls-panel {
+    background: #fff;
+}
+
+audio:focus {
+    outline: none;
+}
+
+/*
+	Footer
+*/
+
+footer {
+    padding: 5rem 0 0 0;
+    color: #999;
+    text-align: center;
+    font-size: 0.75rem;
+    border-top: 1px solid #eee;
+}
+
+/*
+	Story
+*/
+.story {
+    padding: 5.5rem 0 1rem 0;
+    margin: 0 auto;
+}
+
+.story__pic {
+    max-width: 100%;
+    height: auto;
+}
+
+.story__title {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.39rem;
+    text-align: center;
+    font-weight: 900;
+    color: #444;
+    padding: 1.5rem 0;
+}
+
+.story__title--finale::before {
+    padding: 0;
+    content: "";
+}
+
+.story__intro {
+    color: #666;
+    padding: 1.5rem 0;
+    column-count: 2;
+}
+
+.story__intro p:last-child {
+    font-weight: bold;
+}
+
+.story__intro p:first-child {
+    font-size: 1.3rem;
+    color: #444;
+    line-height: 130%;
+    column-span: all;
+    text-align: center;
+    padding-bottom: 1.5rem;
+}
+
+@media (max-width: 800px) {
+    .story__intro {
+        column-count: 1;
+    }
+}
+
+.story__intro p {
+    padding: 0.5rem;
+    margin: 0;
+    break-inside: avoid-column;
+}
+
+.story__reset {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 2.5rem 0;
+    column-span: all;
+}
+
+/*
+	Editor
+*/
+.editor {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 25px 0 0 0;
+    background: #fff;
+}
+
+.editor__nav {
+    z-index: 999;
+    position: absolute;
+    width: 100%;
+    height: 1rem;
+    top: 10px;
+}
+
+.editor__nav--button {
+    height: 7px;
+    width: 7px;
+    border-radius: 7px;
+    position: absolute;
+    display: inline-block;
+}
+
+.editor__nav--button-red {
+    background: #fa4d77;
+    left: 15px;
+}
+
+.editor__nav--button-yellow {
+    background: #fbe72d;
+    left: 28px;
+}
+
+.editor__nav--button-green {
+    background: #53e04a;
+    left: 41px;
+}
+
+.editor__nav--title {
+    position: absolute;
+    left: 70px;
+    font-size: 0.7rem;
+    top: -4px;
+    color: #999;
+}
+
+.editor__nav--hint {
+    font-size: 0.9rem;
+    color: #999;
+    position: absolute;
+    right: 2px;
+    filter: grayscale(100%);
+    top: -9px;
+    display: inline-block;
+    padding: 0.05rem 0.4rem;
+}
+
+.editor__nav--hint:hover {
+    cursor: pointer;
+    color: #000;
+    filter: grayscale(0%);
+}
+
+/*
+	Ace styling
+*/
+.editor .editor__window {
+    width: 100%;
+    height: 300px;
+}
+
+.editor .editor__window .ace_gutter {
+    background: #fff;
+}
+
+.editor .editor__window .ace_active-line {
+    background: #fff;
+}
+
+.editor .editor__window .ace_gutter-active-line {
+    background: #f8f8f8;
+}
+
+/*
+	Cmd
+*/
+.cmd {
+    padding: 1rem 0;
+}
+
+/*
+	Output
+*/
+.output {
+    min-height: 50px;
+    margin: 1.5rem 4rem;
+    font-size: 0.8rem;
+}
+
+.output__cmd {
+    color: #999;
+    padding-bottom: 1rem;
+}
+
+.output__message {
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.output__message--fail {
+    color: red;
+}
+
+.output__message--pass {
+    color: green;
+}

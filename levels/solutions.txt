@@ -1,0 +1,167 @@
+// Level 1 - slices
+agents[2].gear = "full"
+
+// Level 2 - loops, variable assignment
+seconds = 79
+meters = 494
+
+// Level 3 - strings
+return "D. D. D.Buggs"
+
+// Level 4 - interfaces
+func online() RecordingDevice {
+    return BadCamera{}
+}
+type BadCamera struct {
+    name string
+}
+func (c BadCamera) record() string {
+    return "Idle"
+}
+
+// Level 5 - function calls
+for x := 0; x < 100; x++ {
+    found := false
+    for y := 0; y < 100; y++ {
+        passcode = strconv.Itoa(x) + "-" + strconv.Itoa(y)
+        //codes = append(codes, passcode)
+        respCode, _ := validateCode([]string{passcode})
+        if respCode == 1 {
+            codes = []string{passcode}
+            found = true
+            break
+        }
+    }
+    if found {
+        break
+    }
+}
+
+// Level 6 - pointers
+type LaserGrid struct {
+    status string
+    lasers *[7]Laser
+}
+
+type Laser struct {
+    id int
+    isRunning bool
+}
+
+func setupLasers() *[7]Laser {
+    var lasers [7]Laser
+    lasers[0] = Laser{1,true}
+    lasers[1] = Laser{2,true}
+    lasers[2] = Laser{3,true}
+    lasers[3] = Laser{4,true}
+    lasers[4] = Laser{5,true}
+    lasers[5] = Laser{6,true}
+    lasers[6] = Laser{7,true}
+    return &lasers
+}
+
+func testGrid(laserGrid LaserGrid) bool {
+    laserGrid.lasers[0].isRunning = false
+    laserGrid.lasers[1].isRunning = false
+    laserGrid.lasers[2].isRunning = false
+    laserGrid.lasers[3].isRunning = false
+    laserGrid.lasers[4].isRunning = false
+    laserGrid.lasers[5].isRunning = false
+    laserGrid.lasers[6].isRunning = false
+
+    return laserGrid.status == "Operational"
+}
+
+// Level 7 - channels
+interceptComms := make(chan string)
+go func() {
+    interceptComms <- messageQueue(0)
+    interceptComms <- messageQueue(1)
+    interceptComms <- messageQueue(2)
+    interceptComms <- messageQueue(3)
+    close(interceptComms)
+}()
+
+// Level 8 - types, reflect, recursive structs
+func login() interface{} {
+	type Sequence struct {
+        I int
+        S *Sequence
+    }
+    return &Sequence{0, &Sequence{0, &Sequence{2, &Sequence{6, &Sequence{12, &Sequence{20, nil}}}}}}
+}
+
+// Level 9 - mutexes
+var mutex sync.Mutex
+
+func setButton(x int, sequence *[]Button) {
+    mutex.Lock()
+    defer mutex.Unlock()
+
+// Level 10 - init, anonymous functions
+var firstRun = true
+func init() {
+	pump = func(rate int, capacity int) int {
+		if firstRun {
+			firstRun = false
+			return fill(rate, 0, capacity)
+		}
+		return 0
+	}
+}
+
+// Level 11 - json
+type Broadcast struct {
+    Name string `json:"-"`
+    Priority int `json:"-"`
+    Message string `json:"-"`
+    Location string `json:"-"`
+    RealBroadcast
+}
+
+type RealBroadcast struct {
+    Name string
+    Priority int
+    Message string
+    Location string
+}
+
+func createBroadcast(real Broadcast, fake Broadcast) Broadcast {
+    return Broadcast{
+        Name: fake.Name,
+        Priority: fake.Priority,
+        Message: fake.Message,
+        Location: fake.Location,
+        RealBroadcast: RealBroadcast{
+            Name: real.Name,
+            Priority: real.Priority,
+            Message: real.Message,
+            Location: real.Location,
+        },
+    }
+}
+
+// Level 12 - panic, recover, variadic
+func enc(b []byte) string {
+	sha := sha256.Sum256(b)
+	switch string(b) {
+	case "masterPlan":
+		b = append(b, ".pdf"...)
+	case "financials":
+		b = append(b, ".xls"...)
+	case "doubleAgents":
+		b = append(b, ".txt"...)
+	}
+	return base64.StdEncoding.EncodeToString(sha[:])
+}
+
+func secrets() func(*[]Secret) {
+	return func(s *[]Secret) {
+		recover()
+		*s = []Secret{
+			Secret{enc([]byte("masterPlan")), enc([]byte(".pdf"))},
+			Secret{enc([]byte("financials")), enc([]byte(".xls"))},
+			Secret{enc([]byte("doubleAgents")), enc([]byte(".txt"))},
+		}
+	}
+}
