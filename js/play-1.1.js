@@ -6,9 +6,9 @@ document.documentElement = 0;
 let gameConfig = {
     operation_go: {
         editorTitle: (levelNum) => { return `~/operation_go/level_${levelNum}.go`; },
-        codepath: (levelNum) => { return `/operation-go/levels/level_${levelNum}/level_${levelNum}.go`; },
-        finalePath: '/operation-go/levels/finale.txt',
-        imgpath: (levelNum) => { return `/operation-go/img/level_${levelNum}.png`; },
+        codepath: (levelNum) => { return `./levels/level_${levelNum}/level_${levelNum}.go`; },
+        finalePath: './levels/finale.txt',
+        imgpath: (levelNum) => { return `./img/level_${levelNum}.png`; },
         levels: 12,
     }
 }
@@ -174,7 +174,7 @@ async function renderLevel(levelNum) {
                 // add the content
                 levelDOM.querySelector(".story__title").innerHTML = "Finale";
                 levelDOM.querySelector(".story__title").classList += " story__title--finale";
-                levelDOM.querySelector(".story__intro").innerHTML = toParagraphs(content.split("\n")) + `<div class="story__reset"><a href="https://www.twitter.com/intent/tweet?text=I%20just%20beat%20Operation%20Go%2C%20an%20online%20%23golang%20game.%20See%20if%20you%20can%20beat%20it%20too%3A%20www.andybrewer.com/dev/operation-go" target="_blank">Tweet your Victory &rarr;</a><br /><br />or <a href="#" onclick="return resetGame('${game.gameId}');">play again</a></div>`;
+                levelDOM.querySelector(".story__intro").innerHTML = toParagraphs(content.split("\n")) + `<div class="story__reset"><a href="https://www.twitter.com/intent/tweet?text=I%20just%20beat%20Operation%20Go%2C%20an%20online%20%23golang%20game.%20See%20if%20you%20can%20beat%20it%20too%3A%20https://andybrewer.github.io/operation-go/" target="_blank">Tweet your Victory &rarr;</a><br /><br />or <a href="#" onclick="return resetGame('${game.gameId}');">play again</a></div>`;
 
                 // scroll the victory into view
                 document.querySelector(`#level_${levelNum}`).scrollIntoView({
