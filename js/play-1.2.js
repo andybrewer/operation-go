@@ -209,7 +209,7 @@ async function renderLevel(levelNum) {
             // render Ace editor
             let levelEditor = ace.edit(document.querySelector(`#level_${levelNum} .editor__window`), {
                 fontFamily: "monospace",
-                fontSize: "1.1rem",
+                fontSize: "14px",
                 maxLines: 1000,
                 minLines: 10,
                 mode: langConfig[game.langId].syntax,

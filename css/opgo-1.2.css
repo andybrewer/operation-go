@@ -2,47 +2,6 @@
 	Global
 */
 
-body {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-    font-weight: 300;
-    font-size: 1rem;
-    background: #fff;
-    color: #1b1b1b;
-    padding: 3rem;
-    margin: 0 auto;
-}
-
-.content {
-    max-width: 1080px;
-    margin: 0 auto;
-}
-
-p {
-    line-height: 140%;
-}
-
-h1 {
-    font-size: 25px;
-    text-align: center;
-}
-
-section {
-    padding: 3rem 0 2rem 0;
-}
-
-a {
-    color: #4c8efa;
-    text-decoration: none;
-    border-bottom: 0.16rem solid #fff;
-    padding: 0.1rem 0.1rem;
-    font-weight: 400;
-    line-height: 180%;
-}
-
-a:hover {
-    border-bottom: 0.16rem solid #4c8efa;
-}
-
 .split {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -50,10 +9,6 @@ a:hover {
 }
 
 @media only screen and (max-width: 960px) {
-    body {
-        padding: 2rem;
-    }
-
     .split {
         grid-template-columns: 1fr;
         grid-row-gap: 0px;
@@ -113,23 +68,6 @@ ul.feature span.sub {
     display: block;
 }
 
-button {
-    padding: 0.7rem 1rem;
-    font-size: 0.7rem;
-    font-weight: bold;
-    border-radius: 5px;
-    color: #777;
-}
-
-button:hover {
-    color: #000;
-    cursor: pointer;
-}
-
-button:focus {
-    outline: none;
-}
-
 .button__arrow {
     font-size: 0.5rem;
     margin-left: 2px;
@@ -150,16 +88,13 @@ audio:focus {
     outline: none;
 }
 
-/*
-	Footer
-*/
+.cmd a b {
+    font-size: 0.8rem;
+    padding: 0.3rem 1rem;
+}
 
 footer {
-    padding: 5rem 0 0 0;
-    color: #999;
-    text-align: center;
-    font-size: 0.75rem;
-    border-top: 1px solid #eee;
+    font-size: 0.9rem;
 }
 
 /*
@@ -276,7 +211,7 @@ footer {
     position: absolute;
     left: 70px;
     font-size: 0.7rem;
-    top: -4px;
+    top: -9px;
     color: #999;
 }
 

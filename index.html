@@ -9,60 +9,63 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <link rel="icon" href="./img/brand.png">
 
-    <link rel="stylesheet" href="./css/opgo-1.1.css">
+    <link rel="stylesheet" href="./css/mvp.css">
+    <link rel="stylesheet" href="./css/opgo-1.2.css">
 </head>
 
 <body>
+    <main>
+        <header>
+            <img src="./img/logo.png" height=65>
+            <p><small>~ a hackable Golang game in the browser ~</small></p>
 
-    <div id="play" class="content play__opgo">
+            <audio controls autoplay loop>
+                <source src="./audio/operation-go-soundtrack.mp3" type="audio/mpeg">
+            </audio>
+        </header>
+        <div id="play">
 
-        <h1>Operation Go: A Routine Mission</h1>
-        <p style="text-align: center;">A Go programming game in the browser</p>
-
-        <audio controls autoplay loop>
-            <source src="./audio/operation-go-soundtrack.mp3" type="audio/mpeg">
-        </audio>
-
-    </div>
-
-    <template id="level">
-        <div class="story">
-            <img class="story__pic" />
-            <h2 class="story__title"></h2>
-            <div class="story__intro"></div>
         </div>
-        <div class="editor">
-            <div class="editor__nav">
-                <div class="editor__nav--button editor__nav--button-red"></div>
-                <div class="editor__nav--button editor__nav--button-yellow"></div>
-                <div class="editor__nav--button editor__nav--button-green"></div>
-                <div class="editor__nav--title"></div>
-                <span class="editor__nav--hint" onclick="showHint();" title="show hint">&#128161;</span>
+
+        <template id="level">
+            <div class="story">
+                <img class="story__pic" />
+                <h2 class="story__title"></h2>
+                <div class="story__intro"></div>
             </div>
-            <div class="editor__window"></div>
-            <div class="output">
-                <p class="output__cmd">&gt;</p>
-                <p class="output__results"></p>
-                <p class="output__message"></p>
+            <div class="editor">
+                <div class="editor__nav">
+                    <div class="editor__nav--button editor__nav--button-red"></div>
+                    <div class="editor__nav--button editor__nav--button-yellow"></div>
+                    <div class="editor__nav--button editor__nav--button-green"></div>
+                    <div class="editor__nav--title"></div>
+                    <span class="editor__nav--hint" onclick="showHint();" title="show hint">&#128161;</span>
+                </div>
+                <div class="editor__window"></div>
+                <div class="output">
+                    <p class="output__cmd">&gt;</p>
+                    <p class="output__results"></p>
+                    <p class="output__message"></p>
+                </div>
             </div>
-        </div>
-        <div class="cmd">
-            <button onclick="run();">Run <span class="button__arrow">&#9658;</span></button>
-        </div>
-    </template>
+            <div class="cmd">
+                <a href="#" onclick="run(); return false;"><b>Run <span class="button__arrow">&#9658;</span></b></a>
+            </div>
+        </template>
+        <hr>
+        <footer>
+            <p>Made by <a href="https://www.andybrewer.com" target="_blank">Andy Brewer &nearr;</a></p>
+            <p>Source code and
+                solutions on <a href="https://www.github.com/andybrewer/operation-go/" target="_blank">GitHub
+                    &nearr;</a></p>
+        </footer>
 
-    <footer>
-        Made by <a href="https://www.andybrewer.com" target="_blank">Andy Brewer</a>. Source and solutions at <a
-            href="https://www.github.com/andybrewer/operation-go/" target="_blank">GitHub</a>.
-    </footer>
-
+    </main>
     <script src="./js/ace/ace-1.4.3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="./js/ace/ace-golang-1.4.3.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="./js/play-1.1.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/play-1.2.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
         // initialize the game
         setupGame("operation_go", "go");
