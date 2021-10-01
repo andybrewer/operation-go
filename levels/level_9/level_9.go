@@ -54,6 +54,9 @@ func main() {
 
 /* EDIT START */
 
+
+// There is an issue with this level discussed here: https://github.com/andybrewer/operation-go/issues/1#issuecomment-820655623
+
 func setButton(x int, sequence *[]Button) {
 
 	/* EDIT END */
