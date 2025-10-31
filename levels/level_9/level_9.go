@@ -31,10 +31,9 @@ import (
 )
 
 var buttons = []string{"red", "blue", "green", "yellow", "purple"}
+var rng = rand.New(rand.NewSource(111009))
 
 func main() {
-	rand.Seed(111009)
-
 	var waitGroup sync.WaitGroup
 	waitGroup.Add(len(buttons))
 
@@ -61,7 +60,7 @@ func setButton(x int, sequence *[]Button) {
 
 	/* EDIT END */
 	newButton := Button{buttons[x]}
-	time.Sleep(time.Duration(rand.Intn(10)) * time.Millisecond)
+	time.Sleep(time.Duration(rng.Intn(10)) * time.Millisecond)
 	*sequence = append(*sequence, newButton)
 }
 
