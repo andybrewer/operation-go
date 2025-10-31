@@ -32,7 +32,7 @@ func main() {
 	println("Startup failed")
 }
 
-func validSequence(i int, el interface{}) bool {
+func validSequence(i int, el any) bool {
 	return reflect.TypeOf(el).String() == "*main.Sequence" &&
 		!reflect.ValueOf(el).IsNil() &&
 		reflect.ValueOf(el).Elem().NumField() == 2 &&
@@ -41,7 +41,7 @@ func validSequence(i int, el interface{}) bool {
 		!reflect.ValueOf(reflect.ValueOf(el).Elem().Field(1).Interface()).IsNil()
 }
 
-func startup(seq interface{}) bool {
+func startup(seq any) bool {
 	for i := 0; i < 5; i++ {
 		if !validSequence(i, seq) {
 			return false

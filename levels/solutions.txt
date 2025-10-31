@@ -83,7 +83,7 @@ go func() {
 }()
 
 // Level 8 - types, reflect, recursive structs
-func login() interface{} {
+func login() any {
 	type Sequence struct {
         I int
         S *Sequence
